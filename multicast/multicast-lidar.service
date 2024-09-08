@@ -1,0 +1,11 @@
+[Unit]
+Description=Add multicast address to eth0 interface
+After=network-online.target eth0.network
+Requires=eth0.network
+
+[Service]
+Type=simple
+ExecStart=/sbin/ip addr add 239.255.1.1/32 dev eth0 autojoin
+
+[Install]
+WantedBy=multi-user.target

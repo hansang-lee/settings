@@ -1,0 +1,9 @@
+[Unit]
+Description=Check slave local time and re-run ptp4l service.
+
+[Service]
+Type=simple
+ExecStart=/opt/linuxptp/update-time.sh
+
+[Install]
+WantedBy=multi-user.target
